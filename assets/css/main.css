@@ -87,16 +87,10 @@ iframe::-webkit-scrollbar-thumb:hover {
 	margin: 0 auto;
 }
 
-/* Navigation and content max width */
-.nav,
-#header {
+/* Navigation max width */
+.nav {
 	max-width: 1080px;
 	margin: 0 auto;
-}
-
-#header {
-	margin: 0 auto;
-	width: 100%;
 }
 
 article, aside, details, figcaption, figure,
