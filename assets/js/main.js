@@ -18,6 +18,11 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+			
+			// Trigger portfolio section animation after header loads
+			window.setTimeout(function() {
+				$('#one').addClass('loaded');
+			}, 600);
 		});
 
 	// Scrolly.
