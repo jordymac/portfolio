@@ -72,9 +72,8 @@ iframe::-webkit-scrollbar-thumb:hover {
 /* Portfolio section animation */
 #one {
 	opacity: 0;
-	transform: translateY(30px);
-	transition: opacity 0.6s ease, transform 0.6s ease;
-	transition-delay: 0s;
+	transform: translateY(20px);
+	transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 #one.loaded {
