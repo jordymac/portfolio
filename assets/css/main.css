@@ -3175,10 +3175,10 @@ input, select, textarea {
 			}
 
 		#header .inner {
-			-moz-transition: -moz-transform 0.4s ease, opacity 0.4s ease;
-			-webkit-transition: -webkit-transform 0.4s ease, opacity 0.4s ease;
-			-ms-transition: -ms-transform 0.4s ease, opacity 0.4s ease;
-			transition: transform 0.4s ease, opacity 0.4s ease;
+			-moz-transition: -moz-transform 0.2s ease, opacity 0.2s ease;
+			-webkit-transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
+			-ms-transition: -ms-transform 0.2s ease, opacity 0.2s ease;
+			transition: transform 0.2s ease, opacity 0.2s ease;
 			-moz-transition-delay: 0s;
 			-webkit-transition-delay: 0s;
 			-ms-transition-delay: 0s;
@@ -3193,10 +3193,10 @@ input, select, textarea {
 		}
 
 			#header .inner .actions {
-				-moz-transition: -moz-transform 0.3s ease;
-				-webkit-transition: -webkit-transform 0.3s ease;
-				-ms-transition: -ms-transform 0.3s ease;
-				transition: transform 0.3s ease;
+				-moz-transition: -moz-transform 0.15s ease;
+				-webkit-transition: -webkit-transform 0.15s ease;
+				-ms-transition: -ms-transform 0.15s ease;
+				transition: transform 0.15s ease;
 				-moz-transition-delay: 0.1s;
 				-webkit-transition-delay: 0.1s;
 				-ms-transition-delay: 0.1s;

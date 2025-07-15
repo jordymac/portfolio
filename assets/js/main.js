@@ -15,14 +15,19 @@
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
+			$body.removeClass('is-preload');
 			
 			// Trigger portfolio section animation after header loads
 			window.setTimeout(function() {
 				$('#one').addClass('loaded');
-			}, 600);
+			}, 500);
+		});
+		
+		// Remove preload even earlier when DOM is ready
+		$(document).ready(function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 50);
 		});
 
 	// Scrolly.
