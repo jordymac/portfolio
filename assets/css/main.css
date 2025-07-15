@@ -83,7 +83,7 @@ iframe::-webkit-scrollbar-thumb:hover {
 
 /* Header text width constraints */
 #header .inner p {
-	max-width: 90%;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
