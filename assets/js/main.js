@@ -20,7 +20,7 @@
 			// Trigger portfolio section animation after header loads
 			window.setTimeout(function() {
 				$('#one').addClass('loaded');
-			}, 200);
+			}, 50);
 		});
 		
 		// Remove preload even earlier when DOM is ready
