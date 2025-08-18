@@ -69,30 +69,143 @@
 						<header class="major">
 							<h2>Overview</h2>
 						</header>
-						<p class="align-left">Rotation is a semantic discovery tool built for vinyl lovers. It connects to Discogs and transforms static record listings into a scrollable, audio-rich feed — so DJs, collectors, and casual diggers can preview and wishlist records the way they explore in real life: by listening.</p>
+						<p class="align-left"><em>A product‑led build to learn, validate, and showcase PMM skills</em></p>
+						<blockquote>
+							<p>Keep this honest and in‑flight. Fill the prompts; don't invent outcomes. I'll turn it into a clean one‑pager once it's complete.</p>
+						</blockquote>
 						
 						<div style="margin: 2em 0;">
 							<iframe src="https://rotation-sigma.vercel.app/" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 8px;"></iframe>
 						</div>
 						
-						<h3>Key Achievements</h3>
+						<h2>1) Purpose & Outcomes</h2>
 						<ul class="align-left">
-							<li>Designed and built a prototype using Next.js, Discogs OAuth, and YouTube audio matching</li>
-							<li>Developed wishlist functionality, semantic tags, and swipe-based UI for intuitive discovery</li>
-							<li>Defined user roles, store upload flow, and storefront management for record sellers</li>
+							<li><strong>Why this project now?</strong> Broaden hands‑on understanding of how software actually gets built (Claude Code, React, modern web app stack) and keep PMM skills sharp while job hunting.</li>
+							<li><strong>What PMM capabilities am I practising/demonstrating?</strong> Problem framing, segmentation & ICP, positioning, research ops, pricing hypotheses, PLG experiments, analytics instrumentation, storytelling.</li>
+							<li><strong>Definition of success (interim):</strong> By <strong>31 Aug 2025 (target)</strong>, validate a listening‑first feed reduces friction: reach ≥60% activation (first preview + wishlist + click‑out) on a small pilot, ≥50% audio‑match coverage for one test store, and run 5+ qualitative interviews capturing "moments of struggle".</li>
+							<li><strong>Constraints:</strong> Limited technical depth (learning in public), platform policy (YouTube playback, Discogs API), rate limits, and time.</li>
 						</ul>
 						
-						<h3>Challenge</h3>
-						<p class="align-left">Discogs is functional but not discoverable. It's built for collectors, not listeners. Most listings have no audio, chaotic embeds, and flat layouts — making it hard for stores to showcase and harder for buyers to explore.</p>
+						<h2>2) Problem & Hypothesis</h2>
+						<ul class="align-left">
+							<li><strong>Problem statement:</strong> Indie record stores with 1k+ Discogs listings struggle to present inventory in a <em>listening‑first</em> way. DJs/collectors must jump between clunky YouTube embeds and flat pages, making it slow to audition music and hard for stores to differentiate.</li>
+							<li><strong>Evidence so far:</strong> Personal observations; early conversations/demos with DJs & store owners; Discogs supports YouTube embeds but they're poorly organised for continuous listening.</li>
+							<li><strong>Hypotheses to test:</strong>
+								<ul>
+									<li><strong>H1:</strong> A mobile, scrollable feed with inline previews increases time‑on‑listening and wishlist add rate vs current discovery.</li>
+									<li><strong>H2:</strong> ≥50% audio‑match coverage is enough to deliver an "aha" moment for DJs/collectors.</li>
+									<li><strong>H3:</strong> Store setup is low‑friction if Rotation connects via Discogs OAuth and <strong>requires no catalogue re‑entry</strong>; this is achieved via <strong>Supabase + Redis caching</strong> so new listings are auto‑ingested, matched, and served to users.</li>
+								</ul>
+							</li>
+							<li><strong>Assumptions & risks:</strong> Platform compliance (YouTube playback rules), content availability, API rate limits, background playback constraints, and reliability of the matching pipeline.</li>
+						</ul>
 						
-						<h3>Insight</h3>
-						<p class="align-left">Most record stores don't need a new store — they need a better way to show off what they already have. If you can turn Discogs into a scrollable feed with playable previews, you create a bridge between browsing and listening.</p>
+						<h2>3) Audience → Segments, ICP, JTBD</h2>
+						<ul class="align-left">
+							<li><strong>Segments considered:</strong> DJs (travelling & local), record collectors, record store owners, store staff.</li>
+							<li><strong>Primary user & buyer:</strong> Users = DJs/collectors who buy from stores; <strong>Payer = record store</strong> with a Discogs seller account.</li>
+							<li><strong>ICP (company & persona):</strong> Independent record store with <strong>≥1,000 active Discogs listings</strong>; sells online and in‑store; uses in‑store listening stations; wants a better listening experience online without rebuilding their stack.</li>
+							<li><strong>Jobs‑to‑be‑done:</strong>
+								<ul>
+									<li><strong>DJ/Collector:</strong> Quickly audition new stock, build a wishlist, and decide what to buy without tab‑hopping.</li>
+									<li><strong>Store Owner:</strong> Showcase inventory in a listening‑first way to increase discovery and conversion while keeping existing workflows.</li>
+									<li><strong>Store Staff:</strong> Support in‑store discovery ("what should I listen to next?") and shareable wishlists for later purchase.</li>
+								</ul>
+							</li>
+						</ul>
 						
-						<h3>Action</h3>
-						<p class="align-left">Built Rotation to pull store inventories from Discogs, match track previews from YouTube and Apple Music, and display them in a mobile-first feed with swipe gestures. Added wishlist and buy link integration, with a roadmap toward personalisation and pricing analytics.</p>
+						<h2>4) Market Size (TAM/SAM/SOM)</h2>
+						<ul class="align-left">
+							<li><strong>Starting wedge (AU):</strong> You've identified <strong>~20 stores</strong> in Australia with <strong>≥1k Discogs listings</strong> (within ICP). Treat this as the initial <strong>SAM</strong> for the pilot.</li>
+							<li><strong>Working ARPU assumption (for modelling only):</strong> average ICP store sits around the <strong>1,000 tier (~A$50/mo)</strong>. Actual ARPU will vary by inventory bracket once pricing is validated.</li>
+							<li><strong>Adoption scenarios (AU pilot):</strong>
+								<ul>
+									<li><strong>25% adoption:</strong> 5 stores × A$50 × 12 = <strong>A$3,000 ARR</strong></li>
+									<li><strong>40% adoption:</strong> 8 stores × A$50 × 12 = <strong>A$4,800 ARR</strong></li>
+									<li><strong>60% adoption:</strong> 12 stores × A$50 × 12 = <strong>A$7,200 ARR</strong></li>
+								</ul>
+							</li>
+							<li><strong>TAM approach (to fill later):</strong> global count of Discogs sellers with <strong>≥1k listings</strong> × expected ARPU. Keep this <strong>formula‑driven</strong> until we collect reliable counts.</li>
+							<li><strong>Value note:</strong> Rotation <strong>doesn't save staff time</strong>; it <strong>creates new customer offerings</strong> (listening‑first browsing, wishlists/alerts, in‑store discovery via kiosks). Success should be evidenced by <strong>sell‑through lift</strong>, <strong>wishlist→purchase rate</strong>, <strong>repeat sessions</strong>, not time saved.</li>
+						</ul>
 						
-						<h3>Results</h3>
-						<p class="align-left">Currently in early testing. Demos with DJs and store owners have validated strong interest, especially for high-volume stores struggling to differentiate. Positioned as a lightweight tool that adds serious value without disrupting existing workflows.</p>
+						<h2>5) Competitive & Alternatives</h2>
+						<ul class="align-left">
+							<li><strong>Direct/indirect competitors:</strong> Discogs native experience, Bandcamp store pages, embedded players on store sites, DIY playlists, marketplace listing pages.</li>
+							<li><strong>Switching costs & wedges:</strong> Plug‑in value on top of Discogs (no catalogue rebuild). Listening‑first UX. Faster audition → wishlist → buy click. Store‑branded demo pages.</li>
+							<li><strong>Positioning statement:</strong> <em>For independent record stores with large Discogs inventories who want to make listening effortless, <strong>Rotation</strong> is a storefront add‑on that turns merchant pages into a listening‑first feed with playable previews and wishlists. Unlike flat listings and scattered embeds, Rotation centralises audio and accelerates audition‑to‑cart without disrupting existing workflows.</em></li>
+						</ul>
+						
+						<h2>6) Product Scope (MLP) & Experiments</h2>
+						<ul class="align-left">
+							<li><strong>Current MLP:</strong> Ingest Discogs inventory → match playable previews → mobile feed with inline player, wishlist, and outbound buy links.</li>
+							<li><strong>Shipped so far:</strong> <em>In progress.</em> Building prototype flows while learning React/Claude Code; focusing on end‑to‑end "first playable preview" path.</li>
+							<li><strong>Next experiments:</strong>
+								<ol>
+									<li><strong>Store demo page pilot</strong> with 3 target stores; <em>success:</em> ≥30% of visitors play ≥1 preview; <em>target:</em> by 31 Aug 2025.</li>
+									<li><strong>Wishlist email alerts</strong> (notify when saved records drop in price/come back in stock); <em>success:</em> ≥20% CTR to Discogs.</li>
+									<li><strong>Audio‑match coverage uplift</strong> (pipeline tuning); <em>success:</em> increase coverage from baseline to ≥50% for a test store.</li>
+								</ol>
+							</li>
+							<li><strong>Activation definition:</strong> <strong>First preview played + wishlist add + outbound click</strong> within first session.</li>
+							<li><strong>Core metrics:</strong> Activation %, 7‑day return rate, previews per session, wishlist adds/session, click‑through to Discogs, matched‑audio coverage %.
+								<ul>
+									<li><strong>Metric definitions:</strong>
+										<ul>
+											<li><strong>Play:</strong> either <strong>≥5 seconds continuous</strong> playback <strong>or</strong> a <strong>time‑skip event</strong> fired.</li>
+											<li><strong>Purchase:</strong> tracked via <strong>UTM</strong> if available; if not, use outbound click‑through + wishlist conversion as proxy.</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><strong>North star (current build):</strong> <strong>End‑to‑end auth + preview → wishlist → click‑out path</strong> functioning reliably.</li>
+						</ul>
+						
+						<h2>7) Research Plan & Evidence Log</h2>
+						<ul class="align-left">
+							<li><strong>Interview targets:</strong> <strong>local stores with robust online presence and frequent uploads</strong> (esp. <strong>1k–2k Discogs listings</strong>), plus DJs/collectors and store staff.</li>
+							<li><strong>Scripts & artefacts:</strong> discussion guide link, prototypes.</li>
+							<li><strong>Value & WTP prompts (use in interviews):</strong>
+								<ul>
+									<li>What <strong>new offerings</strong> would this enable for your customers (online/in‑store)?</li>
+									<li>If <strong>100 customers</strong> used this feed weekly, how would that change sales patterns or inventory turnover?</li>
+									<li>If Rotation generated <strong>+5–10 wishlist adds per 100 views</strong>, how valuable is that to you?</li>
+									<li>Which <strong>KPIs</strong> would you watch first (sell‑through, AOV, return sessions, foot traffic at listening stations)?</li>
+									<li><strong>Van Westendorp</strong>: At what monthly price is it <strong>too cheap / good value / expensive but worth it / too expensive</strong>?</li>
+									<li>Would you run this on <strong>in‑store listening stations</strong>? What would success look like there?</li>
+								</ul>
+							</li>
+							<li><strong>Interview log:</strong>
+								<ul>
+									<li>Date | Who | Segment | Key quote | Implication</li>
+								</ul>
+							</li>
+							<li><strong>Usability notes:</strong> friction, confusion, time‑to‑value.</li>
+						</ul>
+						
+						<h2>8) Pricing & Packaging (Hypotheses)</h2>
+						<ul class="align-left">
+							<li><strong>Value metric candidates:</strong> <strong>Active inventory size</strong> (primary), matched‑audio count, connected stores, or traffic volume.</li>
+							<li><strong>Initial tier hypothesis (from builder notes — to be validated):</strong>
+								<ul>
+									<li><strong>Free:</strong> &lt;100 active listings</li>
+									<li><strong>500 tier:</strong> <strong>A$30/mo</strong></li>
+									<li><strong>1,000 tier:</strong> <strong>A$50/mo</strong></li>
+									<li><strong>5,000 tier:</strong> <strong>A$80/mo</strong></li>
+									<li><strong>10,000+ tier:</strong> <strong>A$100/mo</strong></li>
+								</ul>
+								<p><em>(Ranges reflect early thinking; exact listing brackets to be finalised after store interviews/WTP.)</em></p>
+							</li>
+							<li><strong>Models to test:</strong>
+								<ol>
+									<li><strong>Tiered by inventory</strong> (as above) with clear indie discounts.</li>
+									<li><strong>Usage‑based add‑on</strong> for matched‑track volume during busy drops.</li>
+									<li><strong>Hybrid</strong> (base tier + usage credits).</li>
+								</ol>
+							</li>
+							<li><strong>Ethical guardrails:</strong> Transparent indie discounts; seasonal credits; easy downgrade/opt‑out.</li>
+							<li><strong>Willingness‑to‑pay plan:</strong> Qual interviews + directional Van Westendorp; anchor against <strong>incremental revenue</strong> (sell‑through lift, wishlist→purchase rate, AOV), improved <strong>customer experience</strong> (plays/session, return sessions), and <strong>in‑store behaviours</strong> (feed used at listening stations).</li>
+						</ul>
 						
 						<div style="margin-top: 2em;">
 							<a class="button" href="https://rotation-sigma.vercel.app/" target="_blank">View upcoming product</a>
