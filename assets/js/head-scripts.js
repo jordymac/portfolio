@@ -24,3 +24,12 @@ vector.load("4432ab11-2feb-418d-9cf9-7a2323ef74b6");
 
 // Reb2b Analytics
 !function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("W6Z57HQ44XOX");
+
+// CookieYes Banner
+(function() {
+  var script = document.createElement('script');
+  script.id = 'cookieyes';
+  script.type = 'text/javascript';
+  script.src = 'https://cdn-cookieyes.com/client_data/8ac890abfa9f79f3ad1cb2c3/script.js';
+  document.head.appendChild(script);
+})();
