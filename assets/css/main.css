@@ -49,6 +49,7 @@ section, summary, time, mark, audio, video {
 iframe {
 	scrollbar-width: thin;
 	scrollbar-color: #666 #f1f1f1;
+	border: 1px solid #ddd;
 }
 
 iframe::-webkit-scrollbar {
@@ -2531,6 +2532,7 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
+				border: 1px solid #ddd;
 			}
 
 /* List */
