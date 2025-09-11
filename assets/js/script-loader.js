@@ -111,11 +111,35 @@ const ScriptLoader = {
     });
   },
 
-  // Load footer scripts
+  // Load footer scripts sequentially to ensure dependencies load in order
   loadFooterScripts(basePath = '') {
-    this.footerScripts.forEach(scriptConfig => {
-      document.body.appendChild(this.createScript(scriptConfig, basePath));
-    });
+    let loadedCount = 0;
+    const totalScripts = this.footerScripts.length;
+    
+    const loadNextScript = (index) => {
+      if (index >= totalScripts) return;
+      
+      const scriptConfig = this.footerScripts[index];
+      const script = this.createScript(scriptConfig, basePath);
+      
+      if (scriptConfig.type === 'external') {
+        script.onload = () => {
+          loadedCount++;
+          loadNextScript(index + 1);
+        };
+        script.onerror = () => {
+          console.warn(`Failed to load script: ${scriptConfig.src}`);
+          loadNextScript(index + 1);
+        };
+      } else {
+        // For inline scripts, just move to next
+        setTimeout(() => loadNextScript(index + 1), 0);
+      }
+      
+      document.body.appendChild(script);
+    };
+    
+    loadNextScript(0);
   },
 
   // Add a new script to any section
