@@ -97,7 +97,7 @@ export function WhatIDoSection() {
           <div className="flex items-center justify-between mb-8">
             <Briefcase className="w-6 h-6 text-foreground" />
             <div className="flex gap-6">
-              {whatIDoItems.map((item, index) => (
+              {whatIDoItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}

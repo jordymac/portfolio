@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.svg"
             alt="JM Logo"
@@ -13,7 +14,7 @@ export function Header() {
             height={40}
             className="w-10 h-10"
           />
-        </a>
+        </Link>
 
         {/* Contact Button */}
         <a

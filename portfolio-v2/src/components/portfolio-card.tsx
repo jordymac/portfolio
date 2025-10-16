@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
@@ -13,9 +13,8 @@ interface PortfolioCardProps {
   onClick: () => void;
 }
 
-export function PortfolioCard({ item, index, total, onClick }: PortfolioCardProps) {
+export function PortfolioCard({ item, onClick }: PortfolioCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   // Track scroll progress of this card
   const { scrollYProgress } = useScroll({
@@ -38,8 +37,6 @@ export function PortfolioCard({ item, index, total, onClick }: PortfolioCardProp
       }}
       className="sticky top-[6rem] mb-8 cursor-pointer"
       onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div
         className="rounded-2xl overflow-hidden aspect-video hover:shadow-xl transition-shadow"

@@ -40,7 +40,7 @@ export function ProjectsSection() {
           {/* Header with Dropdown */}
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-5xl font-bold text-foreground">
-              What I'm Building
+              What I&apos;m Building
             </h2>
 
             {/* Project Dropdown Badge */}

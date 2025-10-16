@@ -81,7 +81,7 @@ export function KnowledgeBaseContent() {
       <section>
         <h2 className="text-3xl font-bold text-foreground mb-4">Insight</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          Decision-makers didn't need more technical specs — they needed clarity. A graph-style tool could show how all the moving parts fit together and help users self-navigate toward relevant solutions and use cases.
+          Decision-makers didn&apos;t need more technical specs — they needed clarity. A graph-style tool could show how all the moving parts fit together and help users self-navigate toward relevant solutions and use cases.
         </p>
       </section>
 
@@ -97,7 +97,7 @@ export function KnowledgeBaseContent() {
       <section>
         <h2 className="text-3xl font-bold text-foreground mb-4">Results</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          The tool became a top-of-funnel lead generator and strategic asset in sales conversations. It also served as a teaching tool for consultants and new hires, making PlaceOS's capabilities easier to explain and position.
+          The tool became a top-of-funnel lead generator and strategic asset in sales conversations. It also served as a teaching tool for consultants and new hires, making PlaceOS&apos;s capabilities easier to explain and position.
         </p>
       </section>
     </div>

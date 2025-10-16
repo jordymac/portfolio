@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-24">
@@ -7,7 +5,7 @@ export function Hero() {
         {/* Text Content */}
         <div className="text-center mb-12">
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6">
-            Hi, I'm <span className="text-accent">Jordy McIntyre</span>
+            Hi, I&apos;m <span className="text-accent">Jordy McIntyre</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Five years as a B2B SaaS marketer. I built marketing that generated millions of impressions, had buyers referencing my content in sales meetings, and influenced 7-figures in pipeline.
@@ -39,7 +37,7 @@ export function Hero() {
               <div className="flex items-start gap-3">
                 <span className="text-accent text-xl flex-shrink-0 leading-[1.75rem]">✓</span>
                 <p className="text-lg text-muted-foreground">
-                  Content buyers actually remember and reference in meetings, that's also engaging
+                  Content buyers actually remember and reference in meetings, that&apos;s also engaging
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -90,7 +88,7 @@ export function Hero() {
               <div className="flex items-start gap-3">
                 <span className="text-accent text-xl flex-shrink-0 leading-[1.75rem]">✓</span>
                 <p className="text-lg text-muted-foreground">
-                  Content buyers actually remember and reference in meetings, that's also engaging
+                  Content buyers actually remember and reference in meetings, that&apos;s also engaging
                 </p>
               </div>
               <div className="flex items-start gap-3">

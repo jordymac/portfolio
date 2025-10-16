@@ -14,10 +14,9 @@ interface PDFCarouselProps {
   title?: string;
 }
 
-export function PDFCarousel({ pdfPath, title }: PDFCarouselProps) {
+export function PDFCarousel({ pdfPath }: PDFCarouselProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [numPages, setNumPages] = useState<number>(0);
-  const [pageLoading, setPageLoading] = useState(false);
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -39,21 +38,16 @@ export function PDFCarousel({ pdfPath, title }: PDFCarouselProps) {
 
   const goToNextPage = () => {
     if (currentPage < numPages) {
-      setPageLoading(true);
       setCurrentPage(currentPage + 1);
     }
   };
 
   const goToPreviousPage = () => {
     if (currentPage > 1) {
-      setPageLoading(true);
       setCurrentPage(currentPage - 1);
     }
   };
 
-  function onPageLoadSuccess() {
-    setPageLoading(false);
-  }
 
   return (
     <div className="space-y-4">
@@ -81,7 +75,6 @@ export function PDFCarousel({ pdfPath, title }: PDFCarouselProps) {
                 <p className="text-muted-foreground">Loading page...</p>
               </div>
             }
-            onLoadSuccess={onPageLoadSuccess}
           />
         </Document>
       </div>
