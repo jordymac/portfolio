@@ -1,8 +1,10 @@
 [build]
-  publish = "."
-  
+  base = "portfolio-v2"
+  command = "npm run build"
+  publish = "portfolio-v2/.next"
+
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
 [[headers]]
   for = "/*"
